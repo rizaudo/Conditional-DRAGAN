@@ -1,7 +1,11 @@
 # Conditional-DRAGAN
 Conditional DRAGAN(cGAN based) code(& model) repo.
-Generator is 4-layer-512-ReluMLP(last layer is tanh), Discriminator is 4-layer-512-ReluMLP.
-Not include any normalization.
+- Generator 
+  4-layer-512-ReluMLP(last layer is tanh)
+- Discriminator 
+  4-layer-512-ReluMLP.
+
+NOTE: Not include any normalization.
 
 Question is always welcome, Pls add some issue.
 ## conditional method
