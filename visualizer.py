@@ -46,7 +46,7 @@ class LayerMLP(chainer.Chain):
         self.x = F.relu(self.l0(x))
         self.x = F.relu(self.l1(self.x))
         self.x = F.relu(self.l2(self.x))
-        self.x = self.l3(self.x)
+        self.x = F.tanh(self.l3(self.x))
         return self.x
 
 
@@ -87,7 +87,7 @@ class LayerMLPClassifier(chainer.Chain):
         return self.x
 
 
-def make_label_one_image(label_num: int, rows: int, cols: int, gen: Generator, dst: str):
+def make_label_one_image(label_num: int, rows: int, cols: int, gen, dst: str):
     n_images = rows * cols
     labels = np.ones(n_images, dtype=np.int8)
     z = Variable(gen.make_input_z_with_label(n_images, labels))
