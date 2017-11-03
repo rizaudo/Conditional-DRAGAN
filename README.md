@@ -1,7 +1,13 @@
 # Conditional-DRAGAN
 Conditional DRAGAN(cGAN based) code(& model) repo.
-Question is always welcome, Pls add some issue.
+- Generator 
+  4-layer-512-ReluMLP(last layer is tanh)
+- Discriminator 
+  4-layer-512-ReluMLP.
 
+NOTE: Not include any normalization.
+
+Question is always welcome, Pls add some issue.
 ## conditional method
 Its cGAN.
 Concat Noise z and Label c(onehot), then linear layer(Fully-Coneccted Layer) handle it.
