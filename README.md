@@ -1,5 +1,7 @@
 # Conditional-DRAGAN
 Conditional DRAGAN(cGAN based) code(& model) repo.
+This model is 4-layer-512-ReluMLP. not include any normalization.
+
 Question is always welcome, Pls add some issue.
 
 ## conditional method
