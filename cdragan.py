@@ -10,7 +10,6 @@ from pathlib import Path
 import os
 import path
 import argparse
-from fashionmnist import get_fmnist
 from PIL import Image
 import matplotlib
 matplotlib.use('Agg')
@@ -406,7 +405,7 @@ def main():
         if args.mnist is True:
             train, _ = chainer.datasets.get_mnist(withlabel=True, ndim=3, scale=255.)
         elif args.fmnist is True:
-            train, _ = get_fmnist(withlabel=True, ndim=3, scale=255.)
+            train, _ = chainer.datasets.get_fashion_mnist(withlabel=True, ndim=3, scale=255.)
         else:
             raise NotImplementedError('no impl...')
     else:
