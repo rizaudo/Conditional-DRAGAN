@@ -341,7 +341,7 @@ def main():
                         help='Random seed of z at visualization stage')
     parser.add_argument('--imagedir', '-dir', default=None,
                         help="Directory of image dir")
-    parser.add_argument('--ncritic', '-nc', default=5,
+    parser.add_argument('--ncritic', '-nc', type=int, default=5,
                         help='n_critic')
     parser.add_argument('--clamp', default=0.01,
                         help='bound of weight clipping in critic')
