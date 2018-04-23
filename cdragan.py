@@ -8,7 +8,6 @@ import chainer.optimizers as optimizers
 import numpy as np
 from pathlib import Path
 import os
-import path
 import argparse
 from PIL import Image
 import matplotlib

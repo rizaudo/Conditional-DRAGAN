@@ -12,9 +12,10 @@ Question is always welcome, Pls add some issue.
 Its cGAN.
 Concat Noise z and Label c(onehot), then linear layer(Fully-Coneccted Layer) handle it.
 
-## Note
-Sorry, training code is not available for now.
-I'll add training code within days...
+## Train
+```
+python cdragan -fmnist --gpu 0 --epoch 100 --out result
+```
 
 ## Label
 | Label | Description |
