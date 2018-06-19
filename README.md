@@ -1,5 +1,5 @@
 # Conditional-DRAGAN
-Conditional DRAGAN(cGAN based) code(& model) repo.
+Conditional DRAGAN(cGAN & WGAN based) code(& model) repo.
 - Generator 
   4-layer-512-ReluMLP(last layer is tanh)
 - Discriminator 
