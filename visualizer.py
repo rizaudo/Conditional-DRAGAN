@@ -136,22 +136,28 @@ def main():
     parser.add_argument('--rows', '-r', default=10)
     parser.add_argument('--cols', '-c', default=10)
     parser.add_argument('--gendir', '-dir', default=None)
-    parser.add_argument('--mnist', action='store_true')
+    parser.add_argument('--out', '-o', default=None)
+    parser.add_argument('--fmnist', action='store_true')
+    parser.add_argument('--allnum', action='store_true')
     args = parser.parse_args()
 
     if args.gendir is None:
         raise ValueError('generater-model is not selected!')
-    if not args.mnist:
-        raise NotImplementedError('this version is mnist only...')
+    if args.out is None:
+        raise ValueError('out directory is not selected!')
+
+    if not args.fmnist:
+        raise NotImplementedError('this version is fmnist only...')
     else:
         generator = LayerMLP(batchsize=1, n_hidden=110, label_num=10)
     chainer.serializers.load_npz(args.gendir, generator)
 
-    if not args.mnist:
-        make_label_one_image(10, args.rows, args.cols, generator, dst='vis')
+    if not args.allnum:
+        # Default: all one image.
+        make_label_one_image(10, args.rows, args.cols, generator, dst=args.out)
     else:
         for i in range(10):
-            make_mnist_image(dst='vis', gen=generator, rows=args.rows, cols=args.cols, label_num=10, number=i)
+            make_mnist_image(dst=args.out, gen=generator, rows=args.rows, cols=args.cols, label_num=10, number=i)
 
     return
 
