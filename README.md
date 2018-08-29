@@ -15,7 +15,18 @@ Concat Noise z and Label c(onehot), then linear layer(Fully-Coneccted Layer) han
 ## Train
 ```
 python cdragan -fmnist --gpu 0 --epoch 100 --out result
+
+
 ```
+## QuickVisualize with Docker
+clone repo and run as follows:
+
+```
+nvidia-docker build -t rizaudo/cdragan-vis .
+nvidia-docker run -it -v (pwd):/dic rizaudo/cdragan-vis /usr/bin/python3 /dic/visualizer.py -o /dic/visu --gendir /dic/models/gen_iter_18000.npz --allnum --fmnist
+ls ./visu/preview/[GENERATED NEW IMAGE]
+```
+
 
 ## Label
 | Label | Description |
